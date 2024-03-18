@@ -27,14 +27,12 @@ class ArticleCell: UITableViewCell {
         articleToDisplay = article
         
         // Set the headline
-        
-        // check how to not force unwra[
         headlineLabel.text = article.title
         
         // Download and display the image
         
+        
         // Check that the article actually has an image
-        // Create url string
         guard let urlString = article.urlToImage else {
             print("Could not find string")
             return
@@ -42,6 +40,14 @@ class ArticleCell: UITableViewCell {
         
         // Create the url
         let url = URL(string: urlString)
+        
+        // Check the cachemanager before downloading any image data
+        if let imageData = CacheManager.retrieveData(urlString) {
+            
+            // There is image data, set the imageview and return
+            articleImageView.image = UIImage(data: imageData)
+            return
+        }
         
         // Check that the url isn't nill
         //guard url != nil else
@@ -61,6 +67,9 @@ class ArticleCell: UITableViewCell {
             // if error == nil && data != nil
             if error == nil, let data = data {
             
+                // Save the data into cahce
+                CacheManager.saveData(urlString, data)
+                
                 // Check if the url string that the data task went off to download matches the article this cell is set to display
                 
                 if self.articleToDisplay!.urlToImage == urlString {

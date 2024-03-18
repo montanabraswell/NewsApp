@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A9664042BA8D8F90086F117 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9664032BA8D8F90086F117 /* CacheManager.swift */; };
 		A4520E5A2B3B84B4000F33E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4520E592B3B84B4000F33E9 /* AppDelegate.swift */; };
 		A4520E5C2B3B84B4000F33E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4520E5B2B3B84B4000F33E9 /* SceneDelegate.swift */; };
 		A4520E5E2B3B84B4000F33E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4520E5D2B3B84B4000F33E9 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A9664032BA8D8F90086F117 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		A4520E562B3B84B4000F33E9 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4520E592B3B84B4000F33E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4520E5B2B3B84B4000F33E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				A4520E712B3B8B74000F33E9 /* ArticleModel.swift */,
 				A4520E6F2B3B87D5000F33E9 /* ArticleService.swift */,
 				A4520E6D2B3B852E000F33E9 /* Article.swift */,
+				6A9664032BA8D8F90086F117 /* CacheManager.swift */,
 				A4520E5F2B3B84B4000F33E9 /* Main.storyboard */,
 				A4520E622B3B84B5000F33E9 /* Assets.xcassets */,
 				A4520E642B3B84B5000F33E9 /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A661EC2B719E40005494FC /* ArticleCell.swift in Sources */,
+				6A9664042BA8D8F90086F117 /* CacheManager.swift in Sources */,
 				A4520E702B3B87D5000F33E9 /* ArticleService.swift in Sources */,
 				A4520E6E2B3B852E000F33E9 /* Article.swift in Sources */,
 				A4520E5E2B3B84B4000F33E9 /* ViewController.swift in Sources */,
