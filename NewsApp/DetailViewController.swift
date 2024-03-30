@@ -14,12 +14,45 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
+    
+    var articleURL:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        webView.navigationDelegate = self
 
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // Check that there's a url
+        
+        if articleURL != nil {
+          
+            // Create the URL object
+            let url = URL(string: articleURL!)
+            
+            guard url != nil else {
+                // Couldnt create the URL object
+                return
+            }
+            // Create the URLRequest object
+            let request = URLRequest(url: url!)
+            
+            // Start spinner
+            spinner.alpha = 1
+            spinner.startAnimating()
+            
+            // Load it in the webview
+            webView.load(request)
+            
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -31,4 +64,15 @@ class DetailViewController: UIViewController {
     }
     */
 
+}
+
+extension DetailViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        // Stop the spinner and hide it
+        spinner.stopAnimating()
+        spinner.alpha = 0
+    }
+    
 }
